@@ -21,7 +21,7 @@
   <meta name="description" content="策略模式主类实现接口方法，写个set接口方法的方法，接口方法再细分实现类并实现接口，由主类的子类调用set接口方法实现复用。 观察者模式一个主题对多个观察者，主题改变时，观察者收到改变。 装饰者模式共同继承一个抽象类或实现一个接口来达到类之间的装饰。 工厂模式一个抽象类里有一个抽象方法，由子类选择实现了抽象方法的抽象类进行使用。 抽象工厂模式一个类里有多个抽象方法，一般是工厂模式，由子类选择组合。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HEAD FIRST设计模式读书笔记(TODO)">
-<meta property="og:url" content="https://github.com/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/index.html">
+<meta property="og:url" content="http://yoursite.com/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="策略模式主类实现接口方法，写个set接口方法的方法，接口方法再细分实现类并实现接口，由主类的子类调用set接口方法实现复用。 观察者模式一个主题对多个观察者，主题改变时，观察者收到改变。 装饰者模式共同继承一个抽象类或实现一个接口来达到类之间的装饰。 工厂模式一个抽象类里有一个抽象方法，由子类选择实现了抽象方法的抽象类进行使用。 抽象工厂模式一个类里有多个抽象方法，一般是工厂模式，由子类选择组合。">
 <meta property="og:locale" content="en_US">
@@ -30,7 +30,7 @@
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://github.com/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/index.html">
+  <link rel="canonical" href="http://yoursite.com/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -38,7 +38,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
   
-<link rel="stylesheet" href="/wmhc/wmhc.github.io.git/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
   
@@ -55,7 +55,7 @@
       
       <div class="profile-block text-center">
         <a id="avatar" href="https://wmhc.github.io" target="_blank">
-          <img class="img-circle img-rotate" src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" width="200" height="200">
+          <img class="img-circle img-rotate" src="/images/touxiang.jpeg" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">HC</h2>
         <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java Developer</h3>
@@ -99,7 +99,7 @@
         
         
         <li class="menu-item menu-item-home">
-          <a href="/wmhc/wmhc.github.io.git/.">
+          <a href="/.">
             
             <i class="icon icon-home-fill"></i>
             
@@ -109,7 +109,7 @@
         
         
         <li class="menu-item menu-item-archives">
-          <a href="/wmhc/wmhc.github.io.git/archives">
+          <a href="/archives">
             
             <i class="icon icon-archives-fill"></i>
             
@@ -130,7 +130,7 @@
         
         <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
         
-        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        <li><a href="/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -166,7 +166,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/07/">July 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/03/">March 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/06/">June 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/05/">May 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/06/">June 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/03/">March 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/11/">November 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -185,7 +185,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/wmhc/wmhc.github.io.git/2022/07/10/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="title">Java多线程</a>
+                <a href="/2022/07/10/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="title">Java多线程</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-10T13:43:52.000Z" itemprop="datePublished">2022-07-10</time>
@@ -200,7 +200,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/wmhc/wmhc.github.io.git/2022/03/08/java%E5%8F%8D%E5%B0%84/" class="title">java反射</a>
+                <a href="/2022/03/08/java%E5%8F%8D%E5%B0%84/" class="title">java反射</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-03-08T13:45:19.000Z" itemprop="datePublished">2022-03-08</time>
@@ -215,7 +215,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="title">HEAD FIRST设计模式读书笔记(TODO)</a>
+                <a href="/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="title">HEAD FIRST设计模式读书笔记(TODO)</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-03-05T13:20:23.000Z" itemprop="datePublished">2022-03-05</time>
@@ -230,7 +230,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/wmhc/wmhc.github.io.git/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="title">ElasticSearch学习笔记</a>
+                <a href="/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="title">ElasticSearch学习笔记</a>
               </p>
               <p class="item-date">
                 <time datetime="2021-10-07T13:37:21.000Z" itemprop="datePublished">2021-10-07</time>
@@ -245,7 +245,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/wmhc/wmhc.github.io.git/2021/09/27/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Docker常用命令</a>
+                <a href="/2021/09/27/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Docker常用命令</a>
               </p>
               <p class="item-date">
                 <time datetime="2021-09-27T13:38:54.000Z" itemprop="datePublished">2021-09-27</time>
@@ -281,7 +281,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="article-date">
+	<a href="/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="article-date">
 	  <time datetime="2022-03-05T13:20:23.000Z" itemprop="datePublished">2022-03-05</time>
 	</a>
 </span>
@@ -290,7 +290,7 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
@@ -320,7 +320,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://github.com/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" title="HEAD FIRST设计模式读书笔记(TODO)" target="_blank" rel="external">https://github.com/wmhc/wmhc.github.io.git/2022/03/05/23种设计模式-TODO/</a>
+      <a href="http://yoursite.com/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" title="HEAD FIRST设计模式读书笔记(TODO)" target="_blank" rel="external">http://yoursite.com/2022/03/05/23种设计模式-TODO/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -335,7 +335,7 @@
     <figure class="media">
       <div class="media-left">
         <a href="https://wmhc.github.io" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" class="img-rounded w-full" alt="">
+          <img src="/images/touxiang.jpeg" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
@@ -365,12 +365,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/wmhc/wmhc.github.io.git/2022/03/08/java%E5%8F%8D%E5%B0%84/" title="java反射"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2022/03/08/java%E5%8F%8D%E5%B0%84/" title="java反射"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/wmhc/wmhc.github.io.git/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="ElasticSearch学习笔记"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="ElasticSearch学习笔记"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -401,7 +401,7 @@
         
         <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
         
-        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        <li><a href="/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -417,10 +417,10 @@
 window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
-<script src="/wmhc/wmhc.github.io.git/js/plugin.min.js"></script>
+<script src="/js/plugin.min.js"></script>
 
 
-<script src="/wmhc/wmhc.github.io.git/js/application.js"></script>
+<script src="/js/application.js"></script>
 
 
     <script>
@@ -433,14 +433,14 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
-        ROOT_URL: '/wmhc/wmhc.github.io.git/',
-        CONTENT_URL: '/wmhc/wmhc.github.io.git/content.json',
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
 
-<script src="/wmhc/wmhc.github.io.git/js/insight.js"></script>
+<script src="/js/insight.js"></script>
 
 
 
