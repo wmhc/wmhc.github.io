@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>linux修改网卡 | Hexo</title>
+  <meta name="description" content="修改网卡1234567891011121314151617181920211: vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth02:# 从dhcp改成staticBOOTPROTO&#x3D;static# 从no改成yes。系统将在启动时自动开启该接口。ONBOOT&#x3D;yes# 设置IP地址IPADDR&#x3D;192.168.0.200# 设置子网掩码NETMASK&#x3D;255">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux修改网卡">
+<meta property="og:url" content="https://github.com/wmhc/wmhc.github.io.git/2021/03/20/linux%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="修改网卡1234567891011121314151617181920211: vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth02:# 从dhcp改成staticBOOTPROTO&#x3D;static# 从no改成yes。系统将在启动时自动开启该接口。ONBOOT&#x3D;yes# 设置IP地址IPADDR&#x3D;192.168.0.200# 设置子网掩码NETMASK&#x3D;255">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-20T13:41:31.000Z">
+<meta property="article:modified_time" content="2022-03-08T15:39:14.485Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://github.com/wmhc/wmhc.github.io.git/2021/03/20/linux%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/wmhc/wmhc.github.io.git/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://wmhc.github.io" target="_blank">
+          <img class="img-circle img-rotate" src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">HC</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanxi, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wmhc/wmhc.github.io.git/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/wmhc/wmhc.github.io.git/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>个人学习笔记博客</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/07/">July 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/03/">March 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/06/">June 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/05/">May 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/06/">June 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/03/">March 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/11/">November 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/07/10/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="title">Java多线程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-10T13:43:52.000Z" itemprop="datePublished">2022-07-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/08/java%E5%8F%8D%E5%B0%84/" class="title">java反射</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-08T13:45:19.000Z" itemprop="datePublished">2022-03-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="title">HEAD FIRST设计模式读书笔记(TODO)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-05T13:20:23.000Z" itemprop="datePublished">2022-03-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="title">ElasticSearch学习笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-07T13:37:21.000Z" itemprop="datePublished">2021-10-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/09/27/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Docker常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-27T13:38:54.000Z" itemprop="datePublished">2021-09-27</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-linux修改网卡" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux修改网卡
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/wmhc/wmhc.github.io.git/2021/03/20/linux%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1/" class="article-date">
+	  <time datetime="2021-03-20T13:41:31.000Z" itemprop="datePublished">2021-03-20</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/wmhc/wmhc.github.io.git/2021/03/20/linux%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="修改网卡"><a href="#修改网卡" class="headerlink" title="修改网卡"></a>修改网卡</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1: vi /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">2:</span><br><span class="line"># 从dhcp改成static</span><br><span class="line">BOOTPROTO=static</span><br><span class="line"># 从no改成yes。系统将在启动时自动开启该接口。</span><br><span class="line">ONBOOT=yes</span><br><span class="line"># 设置IP地址</span><br><span class="line">IPADDR=192.168.0.200</span><br><span class="line"># 设置子网掩码</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line"># 设置网关</span><br><span class="line">GATEWAY=192.168.0.1</span><br><span class="line"># 设置DNS</span><br><span class="line">DNS1=211.167.230.100</span><br><span class="line">DNS2=211.167.230.200</span><br><span class="line"># 表示该接口将通过该配置文件进行设置，而不是通过网络管理器进行管理</span><br><span class="line">NM_CONTROLLED=no</span><br><span class="line">3:  vim /etc/resolv.conf</span><br><span class="line">  nameserver 8.8.8.8</span><br><span class="line">4: service network restart</span><br><span class="line">5:ip addr</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://github.com/wmhc/wmhc.github.io.git/2021/03/20/linux%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1/" title="linux修改网卡" target="_blank" rel="external">https://github.com/wmhc/wmhc.github.io.git/2021/03/20/linux修改网卡/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://wmhc.github.io" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://wmhc.github.io" target="_blank"><span class="text-dark">HC</span><small class="ml-1x">Java Developer</small></a></h3>
+        <div>这个人很懒，什么都没写。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/wmhc/wmhc.github.io.git/2021/03/26/Vue-js/" title="Vue.js"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/wmhc/wmhc.github.io.git/2021/03/11/SpringCloud%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" title="SpringCloud学习总结"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/plugin.min.js"></script>
+
+
+<script src="/wmhc/wmhc.github.io.git/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wmhc/wmhc.github.io.git/',
+        CONTENT_URL: '/wmhc/wmhc.github.io.git/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>

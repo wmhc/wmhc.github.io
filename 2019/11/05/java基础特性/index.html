@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>java基础特性 | Hexo</title>
+  <meta name="description" content="Java三大特性123封装 封装起来提高安全性复用性继承 extends 单继承，不支持多继承，但是有implements，可以实现多个接口，变相多继承多态 父类引用指向子类对象，主要就是针对继承和接口实现，可以重载(参数不同)和重写(返回值类型不同) Lambda表达式函数式接口：对于任何接口，如果只包含唯一一个抽象方法，那么他就是一个函数式接口。对于函数式接口，就可以通过lambda表达式来创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础特性">
+<meta property="og:url" content="https://github.com/wmhc/wmhc.github.io.git/2019/11/05/java%E5%9F%BA%E7%A1%80%E7%89%B9%E6%80%A7/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Java三大特性123封装 封装起来提高安全性复用性继承 extends 单继承，不支持多继承，但是有implements，可以实现多个接口，变相多继承多态 父类引用指向子类对象，主要就是针对继承和接口实现，可以重载(参数不同)和重写(返回值类型不同) Lambda表达式函数式接口：对于任何接口，如果只包含唯一一个抽象方法，那么他就是一个函数式接口。对于函数式接口，就可以通过lambda表达式来创">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-11-05T13:39:46.000Z">
+<meta property="article:modified_time" content="2022-03-08T15:37:57.806Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://github.com/wmhc/wmhc.github.io.git/2019/11/05/java%E5%9F%BA%E7%A1%80%E7%89%B9%E6%80%A7/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/wmhc/wmhc.github.io.git/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://wmhc.github.io" target="_blank">
+          <img class="img-circle img-rotate" src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">HC</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanxi, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wmhc/wmhc.github.io.git/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/wmhc/wmhc.github.io.git/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>个人学习笔记博客</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/07/">July 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/03/">March 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/06/">June 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/05/">May 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/06/">June 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/03/">March 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/11/">November 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/07/10/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="title">Java多线程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-10T13:43:52.000Z" itemprop="datePublished">2022-07-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/08/java%E5%8F%8D%E5%B0%84/" class="title">java反射</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-08T13:45:19.000Z" itemprop="datePublished">2022-03-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="title">HEAD FIRST设计模式读书笔记(TODO)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-05T13:20:23.000Z" itemprop="datePublished">2022-03-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="title">ElasticSearch学习笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-07T13:37:21.000Z" itemprop="datePublished">2021-10-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/09/27/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Docker常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-27T13:38:54.000Z" itemprop="datePublished">2021-09-27</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-java基础特性" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java基础特性
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/wmhc/wmhc.github.io.git/2019/11/05/java%E5%9F%BA%E7%A1%80%E7%89%B9%E6%80%A7/" class="article-date">
+	  <time datetime="2019-11-05T13:39:46.000Z" itemprop="datePublished">2019-11-05</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/wmhc/wmhc.github.io.git/2019/11/05/java%E5%9F%BA%E7%A1%80%E7%89%B9%E6%80%A7/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="Java三大特性"><a href="#Java三大特性" class="headerlink" title="Java三大特性"></a>Java三大特性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">封装 封装起来提高安全性复用性</span><br><span class="line">继承 extends 单继承，不支持多继承，但是有implements，可以实现多个接口，变相多继承</span><br><span class="line">多态 父类引用指向子类对象，主要就是针对继承和接口实现，可以重载(参数不同)和重写(返回值类型不同)</span><br></pre></td></tr></table></figure>
+<h3 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><p>函数式接口：对于任何接口，如果只包含唯一一个抽象方法，那么他就是一个函数式接口。对于函数式接口，就可以通过lambda表达式来创建该接口的对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">函数式编程，主要针对单抽象方法的接口类，也就是函数式接口，简化写法。</span><br><span class="line">public class TestLambda &#123;</span><br><span class="line">    //3。静态内部类</span><br><span class="line">    static class like2 implements Ilike&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void lambda(int a) &#123;</span><br><span class="line">            System.out.println(&quot;I love you2-&gt;&quot;+a);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //4.局部内部类</span><br><span class="line">        class like3 implements Ilike &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void lambda(int a) &#123;</span><br><span class="line">                System.out.println(&quot;I love you3-&gt;&quot; + a);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Ilike like = new like();</span><br><span class="line">        like.lambda(1);</span><br><span class="line"></span><br><span class="line">        like=new like2();</span><br><span class="line">        like.lambda(2);</span><br><span class="line"></span><br><span class="line">        like=new like3();</span><br><span class="line">        like.lambda(3);</span><br><span class="line"></span><br><span class="line">        //5.匿名内部类</span><br><span class="line">        like = new Ilike()&#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void lambda(int a) &#123;</span><br><span class="line">                System.out.println(&quot;I love you4-&gt;&quot; + a);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        like.lambda(4);</span><br><span class="line"></span><br><span class="line">        //6.lombda表达式</span><br><span class="line">        like=(a)-&gt;&#123;</span><br><span class="line">            System.out.println(&quot;I love you5-&gt;&quot; + a);</span><br><span class="line">        &#125;;</span><br><span class="line">        like.lambda(5);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//1。定义一个函数式接口</span><br><span class="line">interface Ilike&#123;</span><br><span class="line">    void lambda(int a);</span><br><span class="line">&#125;</span><br><span class="line">//2。实现类</span><br><span class="line">class like implements  Ilike&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void lambda(int a) &#123;</span><br><span class="line">        System.out.println(&quot;I love you1-&gt;&quot;+a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1>Java中的代码块</h1>
+
+<ul>
+<li>静态代码块<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;静态代码块&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><em><strong>静态代码块在类被加载的时候就运行了，而且只运行一次，并且优先于各种代码块以及构造函数。如果一个类中有多个静态代码块，会按照书写顺序依次执行。</strong></em></p>
+<hr>
+<ul>
+<li>构造代码块<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;构造代码块&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><em><strong>构造代码块在创建对象时被调用，每次创建对象都会调用一次，但是优先于构造函数执行。如果存在多个构造代码块，则执行顺序按照书写顺序依次执行。</strong></em></p>
+<hr>
+<ul>
+<li>构造函数   </li>
+</ul>
+<p><em><strong>1.构造函数的命名必须和类名完全相同。在java中普通函数可以和构造函数同名，但是必须带有返回值；</strong></em></p>
+<p><em><strong>2.构造函数的功能主要用于在类的对象创建时定义初始化的状态。它没有返回值，也不能用void来修饰。这就保证了它不仅什么也不用自动返回，而且根本不能有任何选择。而其他方法都有返回值，即使是void返回值。尽管方法体本身不会自动返回什么，但仍然可以让它返回一些东西，而这些东西可能是不安全的；</strong></em></p>
+<p><em><strong>3.构造函数不能被直接调用，必须通过new运算符在创建对象时才会自动调用；而一般的方法是在程序执行到它的时候被调用的；</strong></em></p>
+<p><em><strong>4.当定义一个类的时候，通常情况下都会显示该类的构造函数，并在函数中指定初始化的工作也可省略，不过Java编译器会提供一个默认的构造函数.此默认构造函数是不带参数的。而一般的方法不存在这一特点</strong></em></p>
+<hr>
+<ul>
+<li>普通代码块   </li>
+</ul>
+<p><em><strong>普通代码块和构造代码块的区别是，构造代码块是在类中定义的，而普通代码块是在方法体中定义的。且普通代码块的执行顺序和书写顺序一致。</strong></em></p>
+<ul>
+<li>注解 Annotation</li>
+</ul>
+<hr>
+<p>1.内置注解：<br>==@Deprocated== 已过期，不建议使用，但是能用<br>==@Override== 重写，重写父类方法<br>==@SuppressWarnings== 抑制警告<br>2.元注解：<br>==@Target== 表示该注解用于什么地方</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ElemenetType.CONSTRUCTOR-----------------------------构造器声明 </span><br><span class="line">ElemenetType.FIELD ----------------------------------域声明（包括 enum 实例） </span><br><span class="line">ElemenetType.LOCAL_VARIABLE------------------------- 局部变量声明 </span><br><span class="line">ElemenetType.METHOD ---------------------------------方法声明 </span><br><span class="line">ElemenetType.PACKAGE --------------------------------包声明 </span><br><span class="line">ElemenetType.PARAMETER ------------------------------参数声明 </span><br><span class="line">ElemenetType.TYPE----------------------------------- 类，接口（包括注解类型）或enum声明 </span><br></pre></td></tr></table></figure>
+<p>==@Retention== 表示在什么级别保存该注解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RetentionPolicy.SOURCE-------------注解将被编译器丢弃 </span><br><span class="line">RetentionPolicy.CLASS -------------注解在class文件中可用，但会被VM丢弃 </span><br><span class="line">RetentionPolicy.RUNTIME ---------VM将在运行期也保留注释，因此可以通过反射机制读取注解的信息。</span><br><span class="line">runtime&gt;class&gt;source</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>==@Documented== 表示次注解包含在javadoc中，会被javadoc工具提取成文档<br>==@Inherited== 允许子类继承父类注解<br>==注意：自定意注解的时候参数名叫value的才可以省略，别的都不行==</p>
+<hr>
+<ul>
+<li>反射 Reflection<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br></pre></td><td class="code"><pre><span class="line">1.通过全球限定类名可以获得类</span><br><span class="line">Class c1 = Class.forName(&quot;com.wm.Reflection.Student&quot;);(要跑出异常)</span><br><span class="line">2.通过对象可以获得类</span><br><span class="line">Class c2 = person.getClass();</span><br><span class="line">3.通过类名</span><br><span class="line">Class c3 = Student.class;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        //获取类的信息</span><br><span class="line">        Class u1 = Class.forName(&quot;com.wm.pojo.User&quot;);</span><br><span class="line">        //获取包名+类名</span><br><span class="line">        System.out.println(u1.getName());</span><br><span class="line">        //获取类名</span><br><span class="line">        System.out.println(u1.getSimpleName());</span><br><span class="line">        //获取类的全部属性 getFiled（）只能获取public属性</span><br><span class="line">        Field[] fields = u1.getDeclaredFields();</span><br><span class="line">        for(Field filed:fields) &#123;</span><br><span class="line">            System.out.println(filed);</span><br><span class="line">        &#125;</span><br><span class="line">        //获取指定属性</span><br><span class="line">        Field name = u1.getDeclaredField(&quot;name&quot;);</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        //获取类的方法</span><br><span class="line">        Method[] methods=u1.getMethods();</span><br><span class="line">        for(Method method :methods)&#123;</span><br><span class="line">            System.out.println(&quot;本类和父类公共的方法&quot;+method);</span><br><span class="line">        &#125;</span><br><span class="line">        methods=u1.getDeclaredMethods();</span><br><span class="line">        for(Method method :methods)&#123;</span><br><span class="line">            System.out.println(&quot;本类所有的方法&quot;+method);</span><br><span class="line">        &#125;</span><br><span class="line">        //获取指定的方法</span><br><span class="line">        Method getName = u1.getMethod(&quot;getName&quot;,null);</span><br><span class="line">        Method setName = u1.getMethod(&quot;setName&quot;,String.class);</span><br><span class="line">        System.out.println(getName);</span><br><span class="line">        System.out.println(setName);</span><br><span class="line">        //获取构造器</span><br><span class="line">        //公共构造器</span><br><span class="line">        Constructor[] constructors=u1.getConstructors();</span><br><span class="line">        for(Constructor constructor : constructors)&#123;</span><br><span class="line">            System.out.println(&quot;公共&quot;+constructor);</span><br><span class="line">        &#125;</span><br><span class="line">        //方法内的构造器</span><br><span class="line">        constructors=u1.getDeclaredConstructors();</span><br><span class="line">        for(Constructor constructor : constructors)&#123;</span><br><span class="line">            System.out.println(&quot;方法内所有&quot;+constructor);</span><br><span class="line">        &#125;</span><br><span class="line">        //获取指定构造器</span><br><span class="line">        Constructor declarConstructor = u1.getDeclaredConstructor();</span><br><span class="line">        System.out.println(&quot;无参&quot;+declarConstructor);</span><br><span class="line">        Constructor declarConstructor2 = u1.getDeclaredConstructor(String.class,int.class);</span><br><span class="line">        System.out.println(&quot;有参&quot;+declarConstructor2);</span><br><span class="line">        //通过newInstance构造一个对象，默认调用了一个无参构造函数</span><br><span class="line">        User user=(User)u1.newInstance();</span><br><span class="line">        System.out.println(user);</span><br><span class="line">        User user1=(User)declarConstructor2.newInstance(&quot;wm&quot;,17);</span><br><span class="line">        System.out.println(user1);</span><br><span class="line">        //通过反射调用方法</span><br><span class="line">        //1.先获取方法</span><br><span class="line">        Method m1 = u1.getDeclaredMethod(&quot;setName&quot;,String.class);</span><br><span class="line">        Method m2 = u1.getDeclaredMethod(&quot;getName&quot;,null);</span><br><span class="line">        //invoke:激活</span><br><span class="line">        m1.invoke(user,&quot;hhh&quot;);</span><br><span class="line">        System.out.println(m2.invoke(user,null));</span><br><span class="line">        //通过反射操作属性</span><br><span class="line">        Field filed1=u1.getDeclaredField(&quot;name&quot;);</span><br><span class="line">        //不能直接操作私有属性，需要setAccessbletrue</span><br><span class="line">        filed1.setAccessible(true);</span><br><span class="line">        filed1.set(user,&quot;盛大&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        //反射操作注解</span><br><span class="line">        public class Reflection2 &#123;</span><br><span class="line">    public static void fan1(Map&lt;String,Worker&gt; map, List&lt;Worker&gt; list)&#123;</span><br><span class="line">        System.out.println(&quot;范1&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public Map&lt;String,Worker&gt; fan2()&#123;</span><br><span class="line">        System.out.println(&quot;范2&quot;);</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String args[]) throws ClassNotFoundException, NoSuchFieldException, NoSuchMethodException &#123;</span><br><span class="line">        Class worker = Class.forName(&quot;com.wm.Reflection.Worker&quot;);</span><br><span class="line"></span><br><span class="line">        //通过反射获得注解</span><br><span class="line">        Annotation annotation = worker.getAnnotation(MyAnnotation.class);</span><br><span class="line">        Annotation[] annotations = worker.getAnnotations();</span><br><span class="line">        for(Annotation annotation1: annotations)&#123;</span><br><span class="line">            System.out.println(annotation1);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(annotation);</span><br><span class="line">        System.out.println(annotations);</span><br><span class="line">        //通过注解获得value的值</span><br><span class="line">        MyAnnotation myAnnotation=(MyAnnotation)worker.getAnnotation(MyAnnotation.class);</span><br><span class="line">        System.out.println(myAnnotation.value());</span><br><span class="line">        //通过注解获得参数</span><br><span class="line">        Field[] fileds=worker.getDeclaredFields();</span><br><span class="line">        for(Field field:fileds)&#123;</span><br><span class="line">            System.out.println(&quot;---&quot;+field);</span><br><span class="line">        &#125;</span><br><span class="line">        //通过类来获得指定的注解</span><br><span class="line">        Field filed = worker.getDeclaredField(&quot;id&quot;);</span><br><span class="line">        MyAnnotation2 myAnnotation2=filed.getAnnotation(MyAnnotation2.class);</span><br><span class="line">        System.out.println(myAnnotation2.lenth());</span><br><span class="line">        System.out.println(myAnnotation2.name());</span><br><span class="line">        System.out.println(myAnnotation2.type());</span><br><span class="line"></span><br><span class="line">        //通过反射操作范形</span><br><span class="line">        Method mt1 = Reflection2.class.getMethod(&quot;fan1&quot;,Map.class,List.class);</span><br><span class="line">        Type[] genericParameterTypes = mt1.getGenericParameterTypes();</span><br><span class="line">        for(Type genericParameterType:genericParameterTypes)&#123;</span><br><span class="line">            System.out.println(&quot;范型&quot;+genericParameterType);</span><br><span class="line">            if(genericParameterType instanceof ParameterizedType)&#123;</span><br><span class="line">                Type[] actrualTypeArgements=((ParameterizedType) genericParameterType).getActualTypeArguments();</span><br><span class="line">                for(Type actrualTypeArgement:actrualTypeArgements) &#123;</span><br><span class="line">                    System.out.println(actrualTypeArgement);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">@MyAnnotation(&quot;db_table&quot;)</span><br><span class="line">class Worker&#123;</span><br><span class="line">    @MyAnnotation2(name=&quot;db_id&quot;,type=&quot;Long&quot;,lenth=20)</span><br><span class="line">    private long id;</span><br><span class="line">    @MyAnnotation2(name=&quot;db_name&quot;,type=&quot;varchar&quot;,lenth=100)</span><br><span class="line">    private String name;</span><br><span class="line">    @MyAnnotation2(name=&quot;db_level&quot;,type=&quot;varchar&quot;,lenth=10)</span><br><span class="line">    private String level;</span><br><span class="line">    @MyAnnotation2(name=&quot;db_age&quot;,type=&quot;int&quot;,lenth=3)</span><br><span class="line">    private Integer age;</span><br><span class="line"></span><br><span class="line">    public Worker(Integer id, String name, String level, Integer age) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.level = level;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;Worker&#123;&quot; +</span><br><span class="line">                &quot;id=&quot; + id +</span><br><span class="line">                &quot;, name=&#x27;&quot; + name + &#x27;\&#x27;&#x27; +</span><br><span class="line">                &quot;, level=&#x27;&quot; + level + &#x27;\&#x27;&#x27; +</span><br><span class="line">                &quot;, age=&quot; + age +</span><br><span class="line">                &#x27;&#125;&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(Long id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setLevel(String level) &#123;</span><br><span class="line">        this.level = level;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(Integer age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Long getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getLevel() &#123;</span><br><span class="line">        return level;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author HC</span><br><span class="line"> */</span><br><span class="line">@Target(ElementType.TYPE)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">@interface MyAnnotation&#123;</span><br><span class="line">    String value();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Target(ElementType.FIELD)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">@interface MyAnnotation2&#123;</span><br><span class="line">    String name();</span><br><span class="line">    int lenth();</span><br><span class="line">    String type();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://github.com/wmhc/wmhc.github.io.git/2019/11/05/java%E5%9F%BA%E7%A1%80%E7%89%B9%E6%80%A7/" title="java基础特性" target="_blank" rel="external">https://github.com/wmhc/wmhc.github.io.git/2019/11/05/java基础特性/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://wmhc.github.io" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://wmhc.github.io" target="_blank"><span class="text-dark">HC</span><small class="ml-1x">Java Developer</small></a></h3>
+        <div>这个人很懒，什么都没写。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/wmhc/wmhc.github.io.git/2019/11/08/Maven%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Maven学习笔记"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/wmhc/wmhc.github.io.git/2019/10/08/Json%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Json学习笔记"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/plugin.min.js"></script>
+
+
+<script src="/wmhc/wmhc.github.io.git/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wmhc/wmhc.github.io.git/',
+        CONTENT_URL: '/wmhc/wmhc.github.io.git/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>

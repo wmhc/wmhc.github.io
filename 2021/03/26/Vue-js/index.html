@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Vue.js | Hexo</title>
+  <meta name="description" content="vue基本语法基础绑定 1234567891011&lt;div id&#x3D;&quot;app&quot;&gt;  &amp;#123;&amp;#123; message &amp;#125;&amp;#125;&lt;&#x2F;div&gt;var app &#x3D; new Vue(&amp;#123;  el: &amp;#x27;#app&amp;#x27;,  data: &amp;#123;    message: &amp;#x27;Hello Vue!&amp;#x27;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js">
+<meta property="og:url" content="https://github.com/wmhc/wmhc.github.io.git/2021/03/26/Vue-js/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vue基本语法基础绑定 1234567891011&lt;div id&#x3D;&quot;app&quot;&gt;  &amp;#123;&amp;#123; message &amp;#125;&amp;#125;&lt;&#x2F;div&gt;var app &#x3D; new Vue(&amp;#123;  el: &amp;#x27;#app&amp;#x27;,  data: &amp;#123;    message: &amp;#x27;Hello Vue!&amp;#x27;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-26T13:40:58.000Z">
+<meta property="article:modified_time" content="2022-03-08T15:44:21.612Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://github.com/wmhc/wmhc.github.io.git/2021/03/26/Vue-js/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/wmhc/wmhc.github.io.git/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://wmhc.github.io" target="_blank">
+          <img class="img-circle img-rotate" src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">HC</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanxi, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wmhc/wmhc.github.io.git/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/wmhc/wmhc.github.io.git/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>个人学习笔记博客</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/07/">July 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/03/">March 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/06/">June 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/05/">May 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/06/">June 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/03/">March 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/11/">November 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/07/10/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="title">Java多线程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-10T13:43:52.000Z" itemprop="datePublished">2022-07-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/08/java%E5%8F%8D%E5%B0%84/" class="title">java反射</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-08T13:45:19.000Z" itemprop="datePublished">2022-03-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="title">HEAD FIRST设计模式读书笔记(TODO)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-05T13:20:23.000Z" itemprop="datePublished">2022-03-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="title">ElasticSearch学习笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-07T13:37:21.000Z" itemprop="datePublished">2021-10-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/09/27/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Docker常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-27T13:38:54.000Z" itemprop="datePublished">2021-09-27</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Vue-js" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue.js
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/wmhc/wmhc.github.io.git/2021/03/26/Vue-js/" class="article-date">
+	  <time datetime="2021-03-26T13:40:58.000Z" itemprop="datePublished">2021-03-26</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/wmhc/wmhc.github.io.git/2021/03/26/Vue-js/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="vue基本语法"><a href="#vue基本语法" class="headerlink" title="vue基本语法"></a>vue基本语法</h3><p><strong>基础绑定</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &#123;&#123; message &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">var app = new Vue(&#123;</span><br><span class="line">  el: &#x27;#app&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#x27;Hello Vue!&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>**v-bind:属性名= **</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-2&quot;&gt;</span><br><span class="line">  &lt;span v-bind:title=&quot;message&quot;&gt;</span><br><span class="line">    鼠标悬停几秒钟查看此处动态绑定的提示信息！</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var app2 = new Vue(&#123;</span><br><span class="line">  el: &#x27;#app-2&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#x27;页面加载于 &#x27; + new Date().toLocaleString()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>v-if 判断</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-3&quot;&gt;</span><br><span class="line">  &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var app3 = new Vue(&#123;</span><br><span class="line">  el: &#x27;#app-3&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    seen: true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>v-for 循环渲染</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-4&quot;&gt;</span><br><span class="line">  &lt;ol&gt;</span><br><span class="line">    &lt;li v-for=&quot;todo in todos&quot;&gt;</span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &lt;/ol&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var app4 = new Vue(&#123;</span><br><span class="line">  el: &#x27;#app-4&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; text: &#x27;学习 JavaScript&#x27; &#125;,</span><br><span class="line">      &#123; text: &#x27;学习 Vue&#x27; &#125;,</span><br><span class="line">      &#123; text: &#x27;整个牛项目&#x27; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>v-on 监听事件 (@)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-5&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;button v-on:click=&quot;reverseMessage&quot;&gt;反转消息&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var app5 = new Vue(&#123;</span><br><span class="line">  el: &#x27;#app-5&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#x27;Hello Vue.js!&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    reverseMessage: function () &#123;</span><br><span class="line">      this.message = this.message.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>v-model 双向绑定</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-6&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;input v-model=&quot;message&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var app6 = new Vue(&#123;</span><br><span class="line">  el: &#x27;#app-6&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#x27;Hello Vue!&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>Vue.component 组件开发（驼峰）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-7&quot;&gt;</span><br><span class="line">  &lt;ol&gt;</span><br><span class="line">    &lt;!--</span><br><span class="line">      现在我们为每个 todo-item 提供 todo 对象</span><br><span class="line">      todo 对象是变量，即其内容可以是动态的。</span><br><span class="line">      我们也需要为每个组件提供一个“key”，稍后再</span><br><span class="line">      作详细解释。</span><br><span class="line">    --&gt;</span><br><span class="line">    &lt;todo-item</span><br><span class="line">      v-for=&quot;item in groceryList&quot;</span><br><span class="line">      v-bind:todo=&quot;item&quot;</span><br><span class="line">      v-bind:key=&quot;item.id&quot;</span><br><span class="line">    &gt;&lt;/todo-item&gt;</span><br><span class="line">  &lt;/ol&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">Vue.component(&#x27;todo-item&#x27;, &#123;</span><br><span class="line">  props: [&#x27;todo&#x27;],</span><br><span class="line">  template: &#x27;&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;&#x27;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">var app7 = new Vue(&#123;</span><br><span class="line">  el: &#x27;#app-7&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    groceryList: [</span><br><span class="line">      &#123; id: 0, text: &#x27;蔬菜&#x27; &#125;,</span><br><span class="line">      &#123; id: 1, text: &#x27;奶酪&#x27; &#125;,</span><br><span class="line">      &#123; id: 2, text: &#x27;随便其它什么人吃的东西&#x27; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>v-slot 插槽</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-8&quot;&gt;</span><br><span class="line">&lt;todo&gt;</span><br><span class="line">&lt;todo-title slot=&quot;todo-title&quot; v-bind:title=&quot;title&quot;&gt;&lt;/todo-title&gt;</span><br><span class="line">&lt;todo-items slot=&quot;todo-items&quot;   v-for=&quot; item in todoItems&quot; v-bind:item=&quot;item&quot;&gt;&lt;/todo-items&gt;</span><br><span class="line">&lt;/todo&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">Vue.component(&quot;todo&quot;,&#123;</span><br><span class="line">    template:</span><br><span class="line">    &#x27;&lt;div&gt;&#x27;+</span><br><span class="line">        &#x27;&lt;slot name=&quot;todo-title&quot;&gt;&lt;/slot&gt;&#x27;+</span><br><span class="line">        &#x27;&lt;ul&gt;&#x27;+</span><br><span class="line">            &#x27;&lt;slot name=&quot;todo-items&quot;&gt;&lt;/slot&gt;&#x27;+</span><br><span class="line">        &#x27;&lt;/ul&gt;&#x27;+</span><br><span class="line">    &#x27;&lt;/div&gt;&#x27;</span><br><span class="line">&#125;);</span><br><span class="line">Vue.componet(&quot;todo-title&quot;,&#123;</span><br><span class="line">props:[&#x27;title&#x27;]</span><br><span class="line">template:</span><br><span class="line">    &#x27;&lt;div&gt;&#123;&#123;title&#125;&#125;&lt;/div&gt;&#x27;</span><br><span class="line">&#125;);</span><br><span class="line">Vue.componet(&quot;todo-items&quot;,&#123;</span><br><span class="line">props:[&#x27;item&#x27;]</span><br><span class="line">template:</span><br><span class="line">    &#x27;&lt;li&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;&#x27;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    el:#app-8</span><br><span class="line">    data:&#123;</span><br><span class="line">    title:&quot;标题&quot;</span><br><span class="line">        todoItems:[&quot;java&quot;,&quot;c&quot;,&quot;python&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>计算属性，内存中运行，虚拟dom(缓存)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example&quot;&gt;</span><br><span class="line">  &lt;p&gt;Original message: &quot;&#123;&#123; message &#125;&#125;&quot;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;Computed reversed message: &quot;&#123;&#123; reversedMessage &#125;&#125;&quot;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">  el: &#x27;#example&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#x27;Hello&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    // 计算属性的 getter</span><br><span class="line">    reversedMessage: function () &#123;</span><br><span class="line">      // `this` 指向 vm 实例</span><br><span class="line">      return this.message.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>自定义事件内容分发</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-9&quot;&gt;</span><br><span class="line">&lt;todo&gt;</span><br><span class="line">&lt;todo-title slot=&quot;todo-title&quot; v-bind:title=&quot;title&quot;&gt;</span><br><span class="line">&lt;/todo-title&gt;</span><br><span class="line">&lt;todo-items slot=&quot;todo-items&quot; v-for=&quot;(item,index) in todoItems&quot;</span><br><span class="line">v-bind:item=&quot;item&quot; v-bind:index=&quot;index&quot; v-on:remove=&quot;removeItems(index)&quot; &gt;</span><br><span class="line">&lt;/todo-items&gt;</span><br><span class="line">&lt;/todo&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">Vue.component(&quot;todo&quot;,&#123;</span><br><span class="line">    template:</span><br><span class="line">    &#x27;&lt;div&gt;&#x27;+</span><br><span class="line">        &#x27;&lt;slot name=&quot;todo-title&quot;&gt;&lt;/slot&gt;&#x27;+</span><br><span class="line">        &#x27;&lt;ul&gt;&#x27;+</span><br><span class="line">            &#x27;&lt;slot name=&quot;todo-items&quot;&gt;&lt;/slot&gt;&#x27;+</span><br><span class="line">        &#x27;&lt;/ul&gt;&#x27;+</span><br><span class="line">    &#x27;&lt;/div&gt;&#x27;</span><br><span class="line">&#125;);</span><br><span class="line">Vue.componet(&quot;todo-title&quot;,&#123;</span><br><span class="line">props:[&#x27;title&#x27;]</span><br><span class="line">template:</span><br><span class="line">    &#x27;&lt;div&gt;&#123;&#123;title&#125;&#125;&lt;/div&gt;&#x27;</span><br><span class="line">&#125;);</span><br><span class="line">Vue.componet(&quot;todo-items&quot;,&#123;</span><br><span class="line">props:[&#x27;item&#x27;,&#x27;index&#x27;]</span><br><span class="line">template:</span><br><span class="line">&lt;!--只能绑定当前组件方法--&gt;</span><br><span class="line">    &#x27;&lt;li&gt;&#123;&#123;item&#125;&#125; &lt;button @click=&quot;remove&quot;&gt;删除&lt;/button&gt;&lt;/li&gt;&#x27;</span><br><span class="line">methods：&#123;</span><br><span class="line">    remove:function(index)&#123;</span><br><span class="line">        this.$emit(&#x27;remove&#x27;,index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    el:#app-9</span><br><span class="line">    data:&#123;</span><br><span class="line">        title:&quot;标题&quot;</span><br><span class="line">        todoItems:[&quot;java&quot;,&quot;c&quot;,&quot;python&quot;]</span><br><span class="line">        methods:&#123;</span><br><span class="line">            removeItems:functioin(index)&#123;</span><br><span class="line">              &lt;!--删除下标元素--&gt; this.todoItems.splice(index,1)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>axios</strong><br>npm install axios</p>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
+<p>局部：import axios from ‘axios’<br>axios.get();<br>全局：Vue.prototype.$axios = axios;<br>this.$axios.get();</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--解决闪烁问题--&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">[v-clock]&#123;</span><br><span class="line">    display:none;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id =&quot;vue&quot; v-clock&gt;</span><br><span class="line">&lt;div&gt;&#123;&#123;info.name&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;div&gt;&#123;&#123;info.address.user&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;a v-bind:href=&quot;info.url&quot;&gt;点我&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    el:&#x27;#vue&#x27;</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line"></span><br><span class="line">        &lt;!--请求的返回参数必须和json一样--&gt;</span><br><span class="line">            info:&#123;</span><br><span class="line">                name：null，</span><br><span class="line">                address：&#123;</span><br><span class="line">                    user：null,</span><br><span class="line">                    password:null</span><br><span class="line">                &#125;</span><br><span class="line">                url:null</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;!--钩子函数--&gt;</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        axios.get(&#x27;../data.json&#x27;).then(response=&gt;(console.log(this.info=response.data)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>vue-cli</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1:下载nodejs</span><br><span class="line">2：安装cnpm npm install cnpm -g(如果有问题可以试试 npm cache verify)</span><br><span class="line">3:安装vue-cli脚手架：cnpm install vue-cli -g 查看vue list 模板</span><br><span class="line">4:使用webpack模板初始化项目：vue init  webpack name</span><br><span class="line">5：进入创建好的项目：npm install</span><br><span class="line">6：启动打包项目：npm run dev</span><br></pre></td></tr></table></figure>
+<p><strong>webpack静态模块打包器</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack -g</span><br><span class="line">npm install webpack-cli -g</span><br><span class="line">cnpm install sass-loader node-sass --save-dev</span><br><span class="line">npm isntall vue-route</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://github.com/wmhc/wmhc.github.io.git/2021/03/26/Vue-js/" title="Vue.js" target="_blank" rel="external">https://github.com/wmhc/wmhc.github.io.git/2021/03/26/Vue-js/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://wmhc.github.io" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://wmhc.github.io" target="_blank"><span class="text-dark">HC</span><small class="ml-1x">Java Developer</small></a></h3>
+        <div>这个人很懒，什么都没写。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/wmhc/wmhc.github.io.git/2021/05/12/RabbitMQ%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="RabbitMQ学习笔记"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/wmhc/wmhc.github.io.git/2021/03/20/linux%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1/" title="linux修改网卡"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/plugin.min.js"></script>
+
+
+<script src="/wmhc/wmhc.github.io.git/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wmhc/wmhc.github.io.git/',
+        CONTENT_URL: '/wmhc/wmhc.github.io.git/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>

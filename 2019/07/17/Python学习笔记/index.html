@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Python学习笔记 | Hexo</title>
+  <meta name="description" content="python学习笔记 字符类型 字符类型：python也有整数型，字符串型，浮点数，布尔型（用and，or，not运算），空值（None）。 输出语句：print &#39;hello, world&#39; python的注释是#或# #   在Python程序中，变量是用一个变量名表示，变量名必须是大小写英文、数字和下划线（_）的组合，且不能用数字开头. 字符串可以用&#39;&#39;或者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习笔记">
+<meta property="og:url" content="https://github.com/wmhc/wmhc.github.io.git/2019/07/17/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="python学习笔记 字符类型 字符类型：python也有整数型，字符串型，浮点数，布尔型（用and，or，not运算），空值（None）。 输出语句：print &#39;hello, world&#39; python的注释是#或# #   在Python程序中，变量是用一个变量名表示，变量名必须是大小写英文、数字和下划线（_）的组合，且不能用数字开头. 字符串可以用&#39;&#39;或者">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-07-17T13:48:12.000Z">
+<meta property="article:modified_time" content="2022-03-08T15:25:22.203Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://github.com/wmhc/wmhc.github.io.git/2019/07/17/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/wmhc/wmhc.github.io.git/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://wmhc.github.io" target="_blank">
+          <img class="img-circle img-rotate" src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">HC</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanxi, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wmhc/wmhc.github.io.git/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/wmhc/wmhc.github.io.git/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>个人学习笔记博客</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/07/">July 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/03/">March 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/06/">June 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/05/">May 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/06/">June 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/03/">March 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/11/">November 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/07/10/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="title">Java多线程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-10T13:43:52.000Z" itemprop="datePublished">2022-07-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/08/java%E5%8F%8D%E5%B0%84/" class="title">java反射</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-08T13:45:19.000Z" itemprop="datePublished">2022-03-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="title">HEAD FIRST设计模式读书笔记(TODO)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-05T13:20:23.000Z" itemprop="datePublished">2022-03-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="title">ElasticSearch学习笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-07T13:37:21.000Z" itemprop="datePublished">2021-10-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/09/27/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Docker常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-27T13:38:54.000Z" itemprop="datePublished">2021-09-27</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Python学习笔记" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python学习笔记
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/wmhc/wmhc.github.io.git/2019/07/17/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+	  <time datetime="2019-07-17T13:48:12.000Z" itemprop="datePublished">2019-07-17</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/wmhc/wmhc.github.io.git/2019/07/17/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <hr>
+<h2 id="python学习笔记"><a href="#python学习笔记" class="headerlink" title="python学习笔记"></a>python学习笔记</h2><hr>
+<h2 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h2><ol>
+<li>字符类型：python也有整数型，字符串型，浮点数，布尔型（<code>用and，or，not运算</code>），空值（<code>None</code>）。</li>
+<li>输出语句：<code>print &#39;hello, world&#39;</code></li>
+<li>python的注释是#或# #  </li>
+<li>在Python程序中，变量是用一个变量名表示，变量名必须是<strong>大小写英文</strong>、<strong>数字</strong>和<strong>下划线（_）</strong>的组合，且<strong>不能用数字开头</strong>.</li>
+<li>字符串可以用<code>&#39;&#39;</code>或者<code>&quot;&quot;</code>括起来表示。如果字符串本身包含<code>&#39;</code>怎么办？比如我们要表示字符串 I’m OK ，这时，可以用<code>&quot;&quot;</code>括起来表示，转义字符也是<code>\</code>.</li>
+<li>python中整数和浮点数运算是浮点数。<h2 id="list有序列表"><a href="#list有序列表" class="headerlink" title="list有序列表"></a>list<code>有序列表</code></h2></li>
+<li>Python是<strong>动态语言</strong>，所以<strong>list</strong>中包含的元素并不要求都是同一种数据类型，我们完全可以在list中包含各种数据：<code>L = [&#39;Michael&#39;, 100, True]</code></li>
+<li>访问list数组第一个元素L[0],访问最后一个元素L[-1]。</li>
+<li>list中添加元素有<code>append（element）</code>和<code>insert（num，element）</code>两种,前一种添加到尾部。</li>
+<li>list中删除元素：<code>pop()</code>不填写元素直接删除最后一个，填写下标删除对应的元素。</li>
+<li><code>L[1]=&quot;a&quot;</code>直接替换角标为一的元素为a.<h2 id="tuple另外一种有序列表，叫做元祖，和list类似，但一旦创建不能修改"><a href="#tuple另外一种有序列表，叫做元祖，和list类似，但一旦创建不能修改" class="headerlink" title="tuple另外一种有序列表，叫做元祖，和list类似，但一旦创建不能修改"></a>tuple<code>另外一种有序列表，叫做元祖，和list类似，但一旦创建不能修改</code></h2></li>
+<li>创建一个tuple<code>t=(1,2,3,4,5)</code>，其他方法和list相同。创建0个元素的tuple是<code>t=()</code>,但创建单元素的tuple时候，要加逗号<code>t=（1，）</code><h2 id="条件判断和循环"><a href="#条件判断和循环" class="headerlink" title="条件判断和循环"></a>条件判断和循环</h2></li>
+<li>注意:Python代码的缩进规则。具有相同缩进的代码被视为代码块，上面的3，4行print语句就构成一个代码块（但不包括第5行的print）。如果 if 语句判断为True，就会执行这个代码块。缩进请严格按照Python的习惯写法：4个空格，不要使用Tab，更不要混合Tab和空格，否则很容易造成因为缩进引起的语法错误。注意: if 语句后接表达式，然后用:表示代码块开始。如果你在Python交互环境下敲代码，还要特别留意缩进，并且退出缩进需要多敲一行回车：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a&gt;=<span class="number">18</span>:</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;haha&quot;</span></span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;xixi&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;end&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>python中有if…elif…else…<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">score = <span class="number">85</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> score&gt;=<span class="number">90</span>:</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;excellent&#x27;</span></span><br><span class="line"><span class="keyword">elif</span> score&gt;=<span class="number">80</span>:</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;good&#x27;</span></span><br><span class="line"><span class="keyword">elif</span> score&gt;=<span class="number">60</span>:</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;passed&#x27;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;failed&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li>python中的for循环和while循环,break跳出当前循环，continue跳过后续代码继续循环。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">L = [<span class="number">75</span>, <span class="number">92</span>, <span class="number">59</span>, <span class="number">68</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> L:</span><br><span class="line">  <span class="built_in">print</span> name</span><br><span class="line"></span><br><span class="line">x=<span class="number">11</span></span><br><span class="line"><span class="keyword">while</span> x&gt;<span class="number">10</span>:</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;a&quot;</span></span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h2 id="Dict和set类型"><a href="#Dict和set类型" class="headerlink" title="Dict和set类型"></a>Dict和set类型</h2></li>
+<li>dict相当于java当中的set，有键值对，len（d）来表示集合的大小,dict是无序的，而且key必须要不能改变的值来作为key，而且key不能重复。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;</span><br><span class="line">    <span class="string">&#x27;Adam&#x27;</span>: <span class="number">95</span>,</span><br><span class="line">    <span class="string">&#x27;Lisa&#x27;</span>: <span class="number">85</span>,</span><br><span class="line">    <span class="string">&#x27;Bart&#x27;</span>: <span class="number">59</span>,</span><br><span class="line">    <span class="string">&#x27;Paul&#x27;</span>: <span class="number">75</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;Adame:&#x27;</span> , d.get(<span class="string">&#x27;Adam&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;Lisa:&#x27;</span>, d.get(<span class="string">&#x27;Lisa&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;Bart:&#x27;</span> , d.get(<span class="string">&#x27;Bart&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>set集合<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">set</span>([<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;c&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span> s</span><br><span class="line"><span class="comment">#set([&#x27;b&#x27;,&#x27;c&#x27;,&#x27;a&#x27;])因为python是无序的，而且不能重复</span></span><br><span class="line"><span class="built_in">len</span>(s)</span><br><span class="line"><span class="comment">#3</span></span><br></pre></td></tr></table></figure></li>
+<li>访问set集合<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#因为python是无序的，所以不能直接访问取值，只能判断他是否存在于set集合中,也可以用for循环遍历</span></span><br><span class="line"></span><br><span class="line"> s = <span class="built_in">set</span>([<span class="string">&#x27;adam&#x27;</span>,<span class="string">&#x27;bart&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;adam&#x27;</span> <span class="keyword">in</span> s</span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;bart&#x27;</span> <span class="keyword">in</span> s</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> s1 <span class="keyword">in</span> s</span><br><span class="line">    <span class="built_in">print</span> s</span><br></pre></td></tr></table></figure></li>
+<li>更新set集合<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.remove()</span><br><span class="line">s.add()</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>python函数  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 汉诺塔递归算法 #</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">move</span>(<span class="params">n,a,b,c</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="built_in">print</span> a,<span class="string">&#x27;--&gt;&#x27;</span>,c</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    move(n-<span class="number">1</span>,a,c,b)</span><br><span class="line">    <span class="built_in">print</span> a,<span class="string">&#x27;--&gt;&#x27;</span>,c</span><br><span class="line">    move(n-<span class="number">1</span>,b,a,c)</span><br><span class="line">move(<span class="number">4</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;C&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>python <code>int()</code>函数可以传递两个参数，第一个为数字，第二个为进制数，<code>int(&#39;123&#39;,8)</code>不传默认10进制。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义默认参数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">green</span>(<span class="params">a=<span class="string">&quot;hao&quot;</span></span>):</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;ni&#x27;</span>,a,<span class="string">&#x27;.&#x27;</span></span><br><span class="line">green()</span><br><span class="line">green(<span class="string">&quot;haoma&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义可变参数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">average</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(args)==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> args:</span><br><span class="line">        <span class="built_in">sum</span> = <span class="built_in">sum</span> + x</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span> / <span class="built_in">len</span>(args)</span><br></pre></td></tr></table></figure>
+<h3 id="切片操作"><a href="#切片操作" class="headerlink" title="切片操作"></a>切片操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#list和tuple一样</span></span><br><span class="line">L = <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">101</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> L[<span class="number">0</span>:<span class="number">10</span>] <span class="comment"># 前10个数；</span></span><br><span class="line"><span class="built_in">print</span> L[<span class="number">2</span>::<span class="number">3</span>] <span class="comment"># 3的倍数；</span></span><br><span class="line"><span class="built_in">print</span> L[<span class="number">4</span>:<span class="number">50</span>:<span class="number">5</span>] <span class="comment"># 不大于50的5的倍数;</span></span><br><span class="line"><span class="comment">#倒序切片</span></span><br><span class="line">L = <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">101</span>)</span><br><span class="line"><span class="built_in">print</span> L[-<span class="number">10</span>:] <span class="comment">#最后10个数</span></span><br><span class="line"><span class="built_in">print</span> L[-<span class="number">46</span>::<span class="number">5</span>] <span class="comment">#最后10个5的倍数。</span></span><br></pre></td></tr></table></figure>
+<h3 id="迭代：Python中，迭代永远是取出元素本身，而非元素的索引。"><a href="#迭代：Python中，迭代永远是取出元素本身，而非元素的索引。" class="headerlink" title="迭代：Python中，迭代永远是取出元素本身，而非元素的索引。"></a>迭代：Python中，迭代永远是取出元素本身，而非元素的索引。</h3></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#迭代list拿到key和value</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lv</span>(<span class="params">L</span>)：</span><br><span class="line">    <span class="keyword">for</span> index ,name <span class="keyword">in</span> <span class="built_in">zip</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="built_in">len</span>(L)+<span class="number">1</span>),L):</span><br><span class="line">    <span class="built_in">print</span> index,<span class="string">&#x27;_&#x27;</span>,name</span><br></pre></td></tr></table></figure>
+<h3 id="多层表达式"><a href="#多层表达式" class="headerlink" title="多层表达式"></a>多层表达式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#for循环可以嵌套，因此，在列表生成式中，也可以用多层 for 循环来生成列表。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#对于字符串 &#x27;ABC&#x27; 和 &#x27;123&#x27;，可以使用两层循环，生成全排列：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[m + n <span class="keyword">for</span> m <span class="keyword">in</span> <span class="string">&#x27;ABC&#x27;</span> <span class="keyword">for</span> n <span class="keyword">in</span> <span class="string">&#x27;123&#x27;</span>]  </span><br><span class="line"></span><br><span class="line">[<span class="string">&#x27;A1&#x27;</span>, <span class="string">&#x27;A2&#x27;</span>, <span class="string">&#x27;A3&#x27;</span>, <span class="string">&#x27;B1&#x27;</span>, <span class="string">&#x27;B2&#x27;</span>, <span class="string">&#x27;B3&#x27;</span>, <span class="string">&#x27;C1&#x27;</span>, <span class="string">&#x27;C2&#x27;</span>, <span class="string">&#x27;C3&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h1><h2 id="高阶函数就是把函数作为参数传递到另一个函数中。"><a href="#高阶函数就是把函数作为参数传递到另一个函数中。" class="headerlink" title="高阶函数就是把函数作为参数传递到另一个函数中。"></a>高阶函数就是把函数作为参数传递到另一个函数中。</h2><ol>
+<li>map()函数，可以传入两个参数，第一个为函数，第二个为函数参数list<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">format_name</span>(<span class="params">s</span>):</span><br><span class="line">    <span class="keyword">return</span> s[<span class="number">0</span>].upper() + s[<span class="number">1</span>:].lower()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">map</span>(format_name, [<span class="string">&#x27;adam&#x27;</span>, <span class="string">&#x27;LISA&#x27;</span>, <span class="string">&#x27;barT&#x27;</span>])</span><br><span class="line"><span class="comment">#upper()转换为大写，lower()转换为小写</span></span><br></pre></td></tr></table></figure></li>
+<li>reduce()和map()差不多，但是函数必须有两个参数，而且是会重复调用函数f，reduce()还可以接收第3个可选参数，作为计算的初始值。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cheng</span>(<span class="params">s</span>):</span><br><span class="line">    <span class="keyword">return</span>  s*s</span><br><span class="line"><span class="built_in">print</span> reduce(cheng,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br></pre></td></tr></table></figure></li>
+<li>filter()函数是 Python 内置的另一个有用的高阶函数，filter()函数接收一个函数 f 和一个list，这个函数 f 的作用是对每个元素进行判断，返回 True或 False，filter()根据判断结果自动过滤掉不符合条件的元素，返回由符合条件元素组成的新list。</li>
+<li>python函数可以返回函数。</li>
+<li>像内层函数引用了外层函数的变量（参数也算变量），然后返回内层函数的情况，称为闭包（Closure）,返回值函数不能引用任何后续可能发生变化的量。</li>
+<li>匿名函数<strong>lambda</strong>：关键字lambda 表示匿名函数，冒号前面的 x 表示函数参数。</li>
+<li>装饰器<strong>decorate</strong>：</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://github.com/wmhc/wmhc.github.io.git/2019/07/17/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Python学习笔记" target="_blank" rel="external">https://github.com/wmhc/wmhc.github.io.git/2019/07/17/Python学习笔记/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://wmhc.github.io" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://wmhc.github.io" target="_blank"><span class="text-dark">HC</span><small class="ml-1x">Java Developer</small></a></h3>
+        <div>这个人很懒，什么都没写。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/wmhc/wmhc.github.io.git/2019/10/08/Json%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Json学习笔记"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/wmhc/wmhc.github.io.git/2019/05/04/%E5%A6%82%E4%BD%95%E7%94%A8hexo%E9%83%A8%E7%BD%B2%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="如何用hexo部署自己的第一个个人博客"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/plugin.min.js"></script>
+
+
+<script src="/wmhc/wmhc.github.io.git/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wmhc/wmhc.github.io.git/',
+        CONTENT_URL: '/wmhc/wmhc.github.io.git/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Java爬虫 | Hexo</title>
+  <meta name="description" content="关于sublime编译java的设置1先在jdk\bin里添加javarun.bat 123456789101112131415161718192021@echo offcd %~dp1echo Compiling %~nx1......if exist %~n1.class ( del %~n1.class)javac %~nx1if exist %~n1.class ( echo ------">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java爬虫">
+<meta property="og:url" content="https://github.com/wmhc/wmhc.github.io.git/2019/04/09/Java%E7%88%AC%E8%99%AB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于sublime编译java的设置1先在jdk\bin里添加javarun.bat 123456789101112131415161718192021@echo offcd %~dp1echo Compiling %~nx1......if exist %~n1.class ( del %~n1.class)javac %~nx1if exist %~n1.class ( echo ------">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-04-09T13:48:49.000Z">
+<meta property="article:modified_time" content="2022-03-08T15:23:15.411Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://github.com/wmhc/wmhc.github.io.git/2019/04/09/Java%E7%88%AC%E8%99%AB/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/wmhc/wmhc.github.io.git/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://wmhc.github.io" target="_blank">
+          <img class="img-circle img-rotate" src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">HC</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanxi, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wmhc/wmhc.github.io.git/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/wmhc/wmhc.github.io.git/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>个人学习笔记博客</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/07/">July 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/03/">March 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/06/">June 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/05/">May 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/06/">June 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/03/">March 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/11/">November 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/07/10/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="title">Java多线程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-10T13:43:52.000Z" itemprop="datePublished">2022-07-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/08/java%E5%8F%8D%E5%B0%84/" class="title">java反射</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-08T13:45:19.000Z" itemprop="datePublished">2022-03-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="title">HEAD FIRST设计模式读书笔记(TODO)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-05T13:20:23.000Z" itemprop="datePublished">2022-03-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="title">ElasticSearch学习笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-07T13:37:21.000Z" itemprop="datePublished">2021-10-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/09/27/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Docker常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-27T13:38:54.000Z" itemprop="datePublished">2021-09-27</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Java爬虫" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java爬虫
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/wmhc/wmhc.github.io.git/2019/04/09/Java%E7%88%AC%E8%99%AB/" class="article-date">
+	  <time datetime="2019-04-09T13:48:49.000Z" itemprop="datePublished">2019-04-09</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/wmhc/wmhc.github.io.git/2019/04/09/Java%E7%88%AC%E8%99%AB/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>关于sublime编译java的设置<br>1先在jdk\bin里添加javarun.bat</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line">cd %~dp1</span><br><span class="line"></span><br><span class="line">echo Compiling %~nx1......</span><br><span class="line"></span><br><span class="line">if exist %~n1.class (</span><br><span class="line"></span><br><span class="line"> del %~n1.class</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">javac %~nx1</span><br><span class="line"></span><br><span class="line">if exist %~n1.class (</span><br><span class="line"></span><br><span class="line"> echo ------Output------</span><br><span class="line"></span><br><span class="line"> java %~n1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>2修改sublime里的packages里的java.sublime-packages文件，解压打开里面的javaC.sublime-build<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> &#123;</span><br><span class="line">	&quot;shell_cmd&quot;: &quot;runjava.bat \&quot;$file\&quot;&quot;,</span><br><span class="line">	&quot;file_regex&quot;: &quot;^(...*?):([0-9]*):?([0-9]*)&quot;,</span><br><span class="line">	&quot;selector&quot;: &quot;source.java&quot;,&quot;encoding&quot;:&quot;GBK&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h4 id="关于java学习需要掌握的基本知识概念"><a href="#关于java学习需要掌握的基本知识概念" class="headerlink" title="关于java学习需要掌握的基本知识概念"></a>关于java学习需要掌握的基本知识概念</h4><p>静态代码块-&gt;构造代码块-&gt;构造函数(静态代码块儿随着类的加载而加载，随着类的消失而消失，构造代码块儿用于初始化属性，在对象建立之前执行，每次建立都会执行一次，构造函数接着执行)<br><em><strong>三大特性</strong></em></p>
+<blockquote>
+<p>爬虫主要通过五个层：用户接口层，任务调度层，网络爬取层，数据解析层，数据持久化层。  </p>
+</blockquote>
+<p>-<strong>封装</strong>：<br>将类的某些信息隐藏在类内部，不允许外部程序直接访问，而是通过该类提供的方法来实现对隐藏信息的操作和访问。</p>
+<p>-<strong>继承</strong>：<br>子类可以继承父类方法，也可以重写，final类不可以重写或覆盖.</br><br>继承所使用的关键字：extends，接口实现所使用的关键字是：implements。</p>
+<p>-<strong>多态</strong>：父类应用指向子类对象，在继承的基础上实现子类对父类的复写。</p>
+<p><em><strong>单例设计模式</strong></em> </br><br>1、单例类只能有一个实例。</br><br>2、单例类必须自己创建自己的唯一实例。</br><br>3、单例类必须给所有其他对象提供这一实例。</br></p>
+<p><em><strong>IO操作</strong></em></p>
+<blockquote>
+<p>文件内容读取：<br>File、FileReader、FileWriter、BufferedReader、BufferedWriter、Scanner、InputStreamReader<br></br>文件夹遍历：File</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * IO流操作的演示类，用来演示文本文件的写出和读取</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Liky</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FileTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 写出内容</span></span><br><span class="line">        <span class="comment">// writeData(</span></span><br><span class="line">        <span class="comment">// &quot;D:/test.txt&quot;,</span></span><br><span class="line">        <span class="comment">// &quot;这是“吉林一号”视频卫星 8月9日11时25分拍摄的 九寨沟县视频 显示了九寨沟县的地形地貌 县城呈狭长分布 周边山体有明显滑坡痕迹 视频中还可见县城道路大部分完好 有车辆通行 一架飞机飞过 地面与空中交通并未中断 图像提供：长光卫星技术有限公司 技术支持：北京爱太空科技发展有限公司&quot;);</span></span><br><span class="line">        System.out.println(readData(<span class="string">&quot;D:/test.txt&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 写出数据</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> filePath</span></span><br><span class="line"><span class="comment">     *            文件保存的位置</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data</span></span><br><span class="line"><span class="comment">     *            要保存的文件内容数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">writeData</span><span class="params">(String filePath, String data)</span> &#123;</span><br><span class="line">        <span class="comment">// 先有一个文件，来保存要写出的数据</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(filePath);</span><br><span class="line">        <span class="comment">// 建立输出流对象</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">FileWriter</span> <span class="variable">writer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileWriter</span>(file);</span><br><span class="line">            <span class="comment">// 开始完成内容的输出</span></span><br><span class="line">            writer.write(data);</span><br><span class="line">            <span class="comment">// 资源必须回收，也就是必须将流关闭</span></span><br><span class="line">            writer.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取数据</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> filePath</span></span><br><span class="line"><span class="comment">     *            要读取的文件所在的完整路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 读取出来的文档内容</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">readData</span><span class="params">(String filePath)</span> &#123;</span><br><span class="line">        <span class="comment">// 也要建立文件对象</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(filePath);</span><br><span class="line">        <span class="comment">// 建立读取的输入流对象</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">FileReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(file);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 每次调用read可以读取一个字符，</span></span><br><span class="line">            <span class="comment">// 按照int类型返回，返回的是字符的编码，</span></span><br><span class="line">            <span class="comment">// 需要通过强制类型转换，变为char类型</span></span><br><span class="line">            <span class="comment">// Java中对于String这个类一般不建议反复修改，因为会占用内存。</span></span><br><span class="line">            <span class="type">StringBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">            <span class="comment">// 因为文件中有很多的字符，因此需要循环来进行内容的读取。</span></span><br><span class="line">            <span class="comment">// 就需要判断是否还有字符进行读取</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// 每次读取时，如果读到内容，则会返回 0 - 65535 的char类型字符</span></span><br><span class="line">            <span class="comment">// 如果没有读取到内容，则返回 -1 ，因此我们可以根据这个 -1 来判断后面是否还有内容</span></span><br><span class="line">            <span class="keyword">while</span> ((value = reader.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">// 将读取到的内容保存下来</span></span><br><span class="line">                <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> (<span class="type">char</span>) value;</span><br><span class="line">                <span class="comment">// 把字符放入到StringBuilder里</span></span><br><span class="line">                builder.append(c);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 没有读取到内容，说明循环结束，已经到了文件的末尾</span></span><br><span class="line">            <span class="keyword">return</span> builder.toString();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">writeData</span><span class="params">(String filePath, String... data)</span> &#123;</span><br><span class="line">        <span class="comment">// 先有一个文件，来保存要写出的数据</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(filePath);</span><br><span class="line">        <span class="comment">// 建立输出流对象</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// FileWriter writer = new FileWriter(file);</span></span><br><span class="line">            <span class="type">PrintWriter</span> <span class="variable">pw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PrintWriter</span>(file);</span><br><span class="line">            <span class="comment">// 开始完成内容的输出</span></span><br><span class="line">            <span class="keyword">for</span> (String str : data) &#123;</span><br><span class="line">                pw.println(str);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 资源必须回收，也就是必须将流关闭</span></span><br><span class="line">            pw.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">readData</span><span class="params">(String filePath)</span> &#123;</span><br><span class="line">        <span class="comment">// 也要建立文件对象</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(filePath);</span><br><span class="line">        <span class="comment">// 建立读取的输入流对象</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">FileReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(file);</span><br><span class="line">            <span class="type">BufferedReader</span> <span class="variable">bw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(reader);</span><br><span class="line">            <span class="comment">// 每次调用read可以读取一个字符，</span></span><br><span class="line">            <span class="comment">// 按照int类型返回，返回的是字符的编码，</span></span><br><span class="line">            <span class="comment">// 需要通过强制类型转换，变为char类型</span></span><br><span class="line">            <span class="comment">// Java中对于String这个类一般不建议反复修改，因为会占用内存。</span></span><br><span class="line">            <span class="type">StringBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">            <span class="comment">// 因为文件中有很多的字符，因此需要循环来进行内容的读取。</span></span><br><span class="line">            <span class="comment">// 就需要判断是否还有字符进行读取</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">line</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">            <span class="comment">// 每次读取时，如果读到内容，则会返回 0 - 65535 的char类型字符</span></span><br><span class="line">            <span class="comment">// 如果没有读取到内容，则返回 -1 ，因此我们可以根据这个 -1 来判断后面是否还有内容</span></span><br><span class="line">            <span class="keyword">while</span> ((line = bw.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">// 将读取到的内容保存下来</span></span><br><span class="line">                <span class="comment">// 把字符放入到StringBuilder里</span></span><br><span class="line">                builder.append(line);</span><br><span class="line">                System.out.println(line);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 没有读取到内容，说明循环结束，已经到了文件的末尾</span></span><br><span class="line">            <span class="keyword">return</span> builder.toString();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>文件夹迭代</strong></em></p>
+<blockquote>
+<p>这里只需要用到一个File类，但需要用里面的一些方法来判断是文件还是文件夹</br><br>isFile()：是否是文件</br><br>isDirectory()：是否是文件夹</br><br>还需要通过递归操作，将目录下的所有子目录也进行迭代。</p>
+</blockquote>
+<p><em><strong>多线程处理</strong></em><br>多线程处理：为了提高工作效率，有两种实现模式：<br>1）继承Thread类<br>2）实现Runnable接口  </p>
+<h6 id="使用多线程的注意方法"><a href="#使用多线程的注意方法" class="headerlink" title="使用多线程的注意方法"></a>使用多线程的注意方法</h6><ul>
+<li>start启动线程</li>
+<li>run（）编写线程执行主体     <h5 id="倒计时功能"><a href="#倒计时功能" class="headerlink" title="倒计时功能"></a>倒计时功能</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// new MyThread().start();</span></span><br><span class="line">        <span class="comment">// new Thread() &#123;</span></span><br><span class="line">        <span class="comment">// public void run() &#123;</span></span><br><span class="line">        <span class="comment">// for (int i = 10; i &gt;= 0; i--) &#123;</span></span><br><span class="line">        <span class="comment">// System.out.println(&quot;剩余时间：&quot; + i);</span></span><br><span class="line">        <span class="comment">// try &#123;</span></span><br><span class="line">        <span class="comment">// Thread.sleep(100);</span></span><br><span class="line">        <span class="comment">// &#125; catch (InterruptedException e) &#123;</span></span><br><span class="line">        <span class="comment">// e.printStackTrace();</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// &#125;.start();</span></span><br><span class="line">        <span class="comment">// new Thread(new MyRunnable()).start();</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承Thread类必须重写run类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;剩余时间：&quot;</span> + i);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">100</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyRunnable</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;剩余时间：&quot;</span> + i);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">100</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><em><strong>类集处理</strong></em>  </p>
+<blockquote>
+<p>List：允许重复，可以根据下标来取得数据，会按照放入的顺序来存储数据。</p>
+</blockquote>
+<blockquote>
+<p>ArrayList：以数组的形式存储，适合不经常变动，但经常查询的数据集。</p>
+</blockquote>
+<blockquote>
+<p>LinkedList：以链表的形式存储，适合经常变动的数据集，但是不经常查询  </p>
+</blockquote>
+<blockquote>
+<p>Set：不允许重复，存储顺序看心情，没办法根据下标取得数据</p>
+</blockquote>
+<blockquote>
+<p>HashSet：散列排序（没有顺序）</p>
+</blockquote>
+<blockquote>
+<p>TreeSet：二叉树排序，按照固定的规则来排序，TreeSet中的内容必须实现一个Comparable的接口，并且必须覆写compareTo的方法，根据给定的规则来排序。</p>
+</blockquote>
+<blockquote>
+<p>Map：key-value形式，可以根据key取得value，key按照Set集合的模式来保存。<br>HashMap：散列<br>TreeMap：有顺序<br>对于Map集合，要求能够循环迭代出里面的所有数据。<br>所以必须掌握Map的循环方法。<br>爬虫分为漫爬型和精准型也叫垂直型。</p>
+</blockquote>
+<h3 id="通配符：-如果希望只取出，不插入，就使用-extends-Hero"><a href="#通配符：-如果希望只取出，不插入，就使用-extends-Hero" class="headerlink" title="通配符：  如果希望只取出，不插入，就使用? extends Hero"></a>通配符：  如果希望只取出，不插入，就使用? extends Hero</h3><p>如果希望只插入，不取出，就使用? super Hero<br>如果希望，又能插入，又能取出，就不要用通配符？  </p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://github.com/wmhc/wmhc.github.io.git/2019/04/09/Java%E7%88%AC%E8%99%AB/" title="Java爬虫" target="_blank" rel="external">https://github.com/wmhc/wmhc.github.io.git/2019/04/09/Java爬虫/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://wmhc.github.io" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://wmhc.github.io" target="_blank"><span class="text-dark">HC</span><small class="ml-1x">Java Developer</small></a></h3>
+        <div>这个人很懒，什么都没写。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/wmhc/wmhc.github.io.git/2019/05/04/%E5%A6%82%E4%BD%95%E7%94%A8hexo%E9%83%A8%E7%BD%B2%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="如何用hexo部署自己的第一个个人博客"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/plugin.min.js"></script>
+
+
+<script src="/wmhc/wmhc.github.io.git/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wmhc/wmhc.github.io.git/',
+        CONTENT_URL: '/wmhc/wmhc.github.io.git/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>

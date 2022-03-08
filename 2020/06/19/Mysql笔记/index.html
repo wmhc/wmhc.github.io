@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Mysql笔记 | Hexo</title>
+  <meta name="description" content="安装mysql1.下载你需要的mysql版本wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.24-linux-glibc2.12-x86_64.tar.gz 2.查看以前是否安装过mysql，如果有的的话： whereis mysql find &#x2F; -name mysql rm -rf 查找到的文件夹3.检查mysql用户组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql笔记">
+<meta property="og:url" content="https://github.com/wmhc/wmhc.github.io.git/2020/06/19/Mysql%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="安装mysql1.下载你需要的mysql版本wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.24-linux-glibc2.12-x86_64.tar.gz 2.查看以前是否安装过mysql，如果有的的话： whereis mysql find &#x2F; -name mysql rm -rf 查找到的文件夹3.检查mysql用户组">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-19T13:44:45.000Z">
+<meta property="article:modified_time" content="2022-03-08T15:32:18.494Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://github.com/wmhc/wmhc.github.io.git/2020/06/19/Mysql%E7%AC%94%E8%AE%B0/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/wmhc/wmhc.github.io.git/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://wmhc.github.io" target="_blank">
+          <img class="img-circle img-rotate" src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">HC</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanxi, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wmhc/wmhc.github.io.git/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/wmhc/wmhc.github.io.git/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>个人学习笔记博客</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/07/">July 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2022/03/">March 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/06/">June 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/05/">May 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/06/">June 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/03/">March 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/11/">November 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wmhc/wmhc.github.io.git/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/07/10/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="title">Java多线程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-10T13:43:52.000Z" itemprop="datePublished">2022-07-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/08/java%E5%8F%8D%E5%B0%84/" class="title">java反射</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-08T13:45:19.000Z" itemprop="datePublished">2022-03-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2022/03/05/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-TODO/" class="title">HEAD FIRST设计模式读书笔记(TODO)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-05T13:20:23.000Z" itemprop="datePublished">2022-03-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/10/07/ElasticSearch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="title">ElasticSearch学习笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-07T13:37:21.000Z" itemprop="datePublished">2021-10-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/wmhc/wmhc.github.io.git/2021/09/27/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Docker常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-27T13:38:54.000Z" itemprop="datePublished">2021-09-27</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Mysql笔记" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mysql笔记
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/wmhc/wmhc.github.io.git/2020/06/19/Mysql%E7%AC%94%E8%AE%B0/" class="article-date">
+	  <time datetime="2020-06-19T13:44:45.000Z" itemprop="datePublished">2020-06-19</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/wmhc/wmhc.github.io.git/2020/06/19/Mysql%E7%AC%94%E8%AE%B0/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><h3 id="1-下载你需要的mysql版本"><a href="#1-下载你需要的mysql版本" class="headerlink" title="1.下载你需要的mysql版本"></a>1.下载你需要的mysql版本</h3><p>wget <a target="_blank" rel="noopener" href="https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.24-linux-glibc2.12-x86_64.tar.gz">https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.24-linux-glibc2.12-x86_64.tar.gz</a></p>
+<h3 id="2-查看以前是否安装过mysql，如果有的的话："><a href="#2-查看以前是否安装过mysql，如果有的的话：" class="headerlink" title="2.查看以前是否安装过mysql，如果有的的话："></a>2.查看以前是否安装过mysql，如果有的的话：</h3><ol>
+<li>whereis mysql</li>
+<li>find / -name mysql</li>
+<li>rm -rf 查找到的文件夹<h3 id="3-检查mysql用户组-没有则创建"><a href="#3-检查mysql用户组-没有则创建" class="headerlink" title="3.检查mysql用户组 没有则创建"></a>3.检查mysql用户组 没有则创建</h3></li>
+<li>cat /etc/group | grep mysql</li>
+<li>cat /etc/passwd |grep mysql</li>
+<li>groupadd mysql</li>
+<li>useradd -r -g mysql mysql<h3 id="4-解压在-usr-local文件夹下-并修改为mysql"><a href="#4-解压在-usr-local文件夹下-并修改为mysql" class="headerlink" title="4.解压在/usr/local文件夹下,并修改为mysql"></a>4.解压在/usr/local文件夹下,并修改为mysql</h3></li>
+<li>tar xzvf mysql-5.7.24-linux-glibc2.12-x86_64.tar.gz</li>
+<li>mv mysql-5.7.24-linux-glibc2.12-x86_64 mysql<h3 id="5-在-usr-local-mysql目录下创建data目录-并创建目录所属用户组和权限"><a href="#5-在-usr-local-mysql目录下创建data目录-并创建目录所属用户组和权限" class="headerlink" title="5.在/usr/local/mysql目录下创建data目录,并创建目录所属用户组和权限"></a>5.在/usr/local/mysql目录下创建data目录,并创建目录所属用户组和权限</h3></li>
+<li>mkdir /usr/local/mysql/data</li>
+<li>chown -R mysql:mysql /usr/local/mysql<br>chmod -R 755 /usr/local/mysql<h3 id="6-编译安装，记住末尾临时密码"><a href="#6-编译安装，记住末尾临时密码" class="headerlink" title="6.编译安装，记住末尾临时密码"></a>6.编译安装，记住末尾临时密码</h3></li>
+<li>cd /usr/local/mysql/bin<br>./mysqld –initialize –user=mysql –datadir=/usr/local/mysql/data –basedir=/usr/local/mysql<h3 id="7-编辑配置文件-vi-etc-my-cnf"><a href="#7-编辑配置文件-vi-etc-my-cnf" class="headerlink" title="7.编辑配置文件 vi /etc/my.cnf"></a>7.编辑配置文件 vi /etc/my.cnf</h3>[mysqld]<br>datadir=/usr/local/mysql/data<br>port = 3306<br>sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES<br>symbolic-links=0<br>max_connections=400<br>innodb_file_per_table=1<br>#表名大小写不明感，敏感为<br>lower_case_table_names=1  <h3 id="8-添加软连接"><a href="#8-添加软连接" class="headerlink" title="8.添加软连接"></a>8.添加软连接</h3>ln -s /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql<br>ln -s /usr/local/mysql/bin/mysql /usr/bin/mysql<br>service mysql restart<h3 id="9-登陆并修改密码"><a href="#9-登陆并修改密码" class="headerlink" title="9.登陆并修改密码"></a>9.登陆并修改密码</h3>mysql -u root -p<br>set password for root@localhost = password(‘yourpass’);</li>
+</ol>
+<h3 id="10-开放远程链接，centos需加入防火墙"><a href="#10-开放远程链接，centos需加入防火墙" class="headerlink" title="10.开放远程链接，centos需加入防火墙"></a>10.开放远程链接，centos需加入防火墙</h3><ol>
+<li>mysql&gt;use mysql;<br>msyql&gt;update user set user.Host=’%’ where user.User=’root’;<br>mysql&gt;flush privileges;  </li>
+<li>加入防火墙：sudo firewall-cmd –zone=public –permanent –add-service=mysql   </li>
+</ol>
+<p>2.1) sudo systemctl restart firewalld</p>
+<h3 id="11-设置开机自启动"><a href="#11-设置开机自启动" class="headerlink" title="11.设置开机自启动"></a>11.设置开机自启动</h3><p>1、将服务文件拷贝到init.d下，并重命名为mysql<br>[root@localhost /]# cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld<br>2、赋予可执行权限<br>[root@localhost /]# chmod +x /etc/init.d/mysqld<br>3、添加服务<br>[root@localhost /]# chkconfig –add mysqld<br>4、显示服务列表<br>[root@localhost /]# chkconfig –list</p>
+<h1 id="datetime和timestamp区别"><a href="#datetime和timestamp区别" class="headerlink" title="datetime和timestamp区别"></a>datetime和timestamp区别</h1><h3 id="1-占用空间"><a href="#1-占用空间" class="headerlink" title="1.占用空间"></a>1.占用空间</h3><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">占据字节</th>
+<th align="center">表示形式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">datetime</td>
+<td align="center">8字节</td>
+<td align="center">yyyy-mm-dd hh:mm:ss</td>
+</tr>
+<tr>
+<td align="center">timestamp</td>
+<td align="center">4字节</td>
+<td align="center">yyyy-mm-dd hh:mm:ss</td>
+</tr>
+</tbody></table>
+<h3 id="2-表示范围"><a href="#2-表示范围" class="headerlink" title="2.表示范围"></a>2.表示范围</h3><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">表示范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">datetime</td>
+<td align="center">‘1000-01-01 00:00:00.000000’ to ‘9999-12-31 23:59:59.999999’</td>
+</tr>
+<tr>
+<td align="center">timestamp</td>
+<td align="center">‘1970-01-01 00:00:01.000000’ to ‘2038-01-19 03:14:07.999999’</td>
+</tr>
+</tbody></table>
+<p><font color=red><code>timestamp</code></font>翻译为汉语即”时间戳”，它是当前时间到 Unix元年<font color=red><code>(1970 年 1 月 1 日 0 时 0 分 0 秒)</code></font>的秒数。对于某些时间的计算，如果是以 <font color=red><code>datetime</code></font> 的形式会比较困难，假如我是<font color=red> <code>1994-1-20 06:06:06</code></font> 出生，现在的时间是 <font color=red><code>2016-10-1 20:04:50</code></font> ，那么要计算我活了多少秒钟用 <font color=red><code>datetime</code></font> 还需要函数进行转换，但是<font color=red> <code>timestamp</code></font> 直接相减就行。</p>
+<h3 id="3-时区"><a href="#3-时区" class="headerlink" title="3.时区"></a>3.时区</h3><p><font color=red><code>timestamp</code></font> 只占 4 个字节，而且是以<font color=red><code>utc</code></font> 的格式储存， 它会自动检索当前时区并进行转换。</p>
+<p><font color=red><code>datetime</code></font> 以 8 个字节储存，不会进行时区的检索.</p>
+<p>也就是说，对于<font color=red><code>timestamp</code></font> 来说，如果储存时的时区和检索时的时区不一样，那么拿出来的数据也不一样。对于<font color=red><code>datetime</code></font> 来说，存什么拿到的就是什么。</p>
+<p>还有一个区别就是如果存进去的是<font color=red><code>NULL</code></font> ，<font color=red><code>timestamp</code></font> 会自动储存当前时间，而 <font color=red><code>datetime</code></font> 会储存 <font color=red><code>NULL</code></font> 。</p>
+<blockquote>
+<p>utc格式：yyyy-MM-dd<br>时间戳格式：yyyyMMdd</p>
+</blockquote>
+<h3 id="4-选择"><a href="#4-选择" class="headerlink" title="4.选择"></a>4.选择</h3><p>如果在时间上要超过<font color=red><code>Linux</code></font>时间的，或者服务器时区不一样的就建议选择<font color=red> <code>datetime</code></font>。</p>
+<p>如果是想要使用自动插入时间或者自动更新时间功能的，可以使用<font color=red><code>timestamp</code></font>。</p>
+<p>如果只是想表示年、日期、时间的还可以使用 <font color=red><code>year</code></font>、<font color=red> <code>date</code></font>、 <font color=red><code>time</code></font>，它们分别占据 1、3、3 字节，而<font color=red><code>datetime</code></font>就是它们的集合。</p>
+<h3 id="mysql事务"><a href="#mysql事务" class="headerlink" title="mysql事务"></a>mysql事务</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">set</span> <span class="variable">autocommit</span> <span class="operator">=</span> <span class="number">0</span>; --关闭自动提交</span><br><span class="line">start transaction; --开启事物</span><br><span class="line"></span><br><span class="line">commit; --提交事物</span><br><span class="line">rollback; --失败事务回滚</span><br><span class="line"><span class="type">set</span> <span class="variable">autocommit</span> <span class="operator">=</span> <span class="number">1</span>; --开启事务自动提交</span><br><span class="line"></span><br><span class="line">savepoint --设置保存点</span><br><span class="line">rollback to savepoint --回滚至保存点</span><br><span class="line">release savepoint --删除保存点</span><br></pre></td></tr></table></figure>
+
+<h3 id="jdbc"><a href="#jdbc" class="headerlink" title="jdbc"></a>jdbc</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> staic <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span>&#123;</span><br><span class="line">    <span class="comment">//1.加载数据库驱动</span></span><br><span class="line">    Class.forName(com.mysql.jdbc.Driver);</span><br><span class="line">    <span class="comment">//2.地址账号密码</span></span><br><span class="line">    String url=<span class="string">&quot;jdbc:mysql://localhost:3306/yourdatabase?userUnicode=true&amp;characterEncoding=utf8$userSSL=true&quot;</span>;</span><br><span class="line">    String username=<span class="string">&quot;root&quot;</span>;</span><br><span class="line">    String password=<span class="string">&quot;root&quot;</span>;</span><br><span class="line">    <span class="comment">//3.链接数据库</span></span><br><span class="line">    Connection connection=DriverManage.getConnection(url,username,password);</span><br><span class="line">    <span class="comment">//4.sql对象</span></span><br><span class="line">    Statement statement=connection.createStatement();</span><br><span class="line">    <span class="comment">//5.执行sql</span></span><br><span class="line">    String sql=<span class="string">&quot;select * from user&quot;</span>;</span><br><span class="line">    <span class="comment">//返回是一个链表</span></span><br><span class="line">    ResultSet resultset=statement.executeQuery(sql);</span><br><span class="line">    <span class="comment">//6.释放链接</span></span><br><span class="line">    resultset.close();</span><br><span class="line">    connection.close();</span><br><span class="line">    statement.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://github.com/wmhc/wmhc.github.io.git/2020/06/19/Mysql%E7%AC%94%E8%AE%B0/" title="Mysql笔记" target="_blank" rel="external">https://github.com/wmhc/wmhc.github.io.git/2020/06/19/Mysql笔记/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://wmhc.github.io" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/wmhc/wmhc.github.io.git/images/touxiang.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://wmhc.github.io" target="_blank"><span class="text-dark">HC</span><small class="ml-1x">Java Developer</small></a></h3>
+        <div>这个人很懒，什么都没写。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/wmhc/wmhc.github.io.git/2020/09/02/Mybatis%E7%AC%94%E8%AE%B0/" title="Mybatis笔记"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/wmhc/wmhc.github.io.git/2020/06/15/Redis%E7%AC%94%E8%AE%B0/" title="Redis笔记"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wmhc/wmhc.github.io.git/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/plugin.min.js"></script>
+
+
+<script src="/wmhc/wmhc.github.io.git/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wmhc/wmhc.github.io.git/',
+        CONTENT_URL: '/wmhc/wmhc.github.io.git/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wmhc/wmhc.github.io.git/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
